@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para Meu Amor Isa! ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    background:black;
+    overflow:hidden;
+    font-family: Arial;
+}
+
+.heart{
+    position:absolute;
+    bottom:-20px;
+    font-size:24px;
+    animation: subir 6s linear infinite;
+}
+
+@keyframes subir{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+.botao{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:20px 40px;
+    font-size:22px;
+    background:#7b2cff;
+    border:none;
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.botao:hover{
+    background:#5c1fd1;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="botao" onclick="entrar()">Cliqua aqui bb ❤️</button>
+
+<script>
+
+function criarCoracao(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*30)+"px";
+    heart.style.animationDuration = (4 + Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove()
+    },6000)
+}
+
+setInterval(criarCoracao,300)
+
+function entrar(){
+    window.location.href="amor.html"
+}
+
+</script>
+
+</body>
+</html>
